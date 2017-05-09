@@ -1,0 +1,143 @@
+/* Base Application Styles */
+body {
+  color: #fff;
+  background: #222;
+}
+
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.index .notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  background: #666;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.search-box-container {
+  margin-bottom: 10px;
+  text-align: -webkit-center;
+}
+ 
+.search-box-text {
+  background-color: transparent;
+  padding: 10px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #dedede;
+  border-radius: 40px;
+  color: #dedede;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.search-box-text:focus {
+    border-color: #ff6200;
+    outline: none;
+  }
+
+.random-text {
+  color: #868686;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+.result-list {
+  width: 800px;
+  margin: auto;
+}
+
+.a-result {
+  text-decoration: none;
+}
+
+.result {
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+
+  width: 100%;
+  max-width: 800px;
+  min-height: 100px;
+  /*max-height: 150px;*/
+  margin: 0 auto;
+  display: block;
+  background-color: #f4f4f4;
+  padding: 10px 20px 10px;
+  margin-bottom: 5px;
+  text-align: left;
+
+  border-left: 3px solid #717171;
+  border-right: 3px solid #717171;
+
+  transition: .1s ease-out all;
+
+}
+
+.result h3 {
+  font-size: 1rem;
+}
+
+.result p {
+  font-size: 0.8rem;
+  color:#006621;
+  margin: 5px 0px;
+}
+
+.result:hover {
+  color: #333;
+  border-color: #ff6200;
+}
+
+.truncate {
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.image {
+  float:left;
+  width: 200px;
+}
+
+/*.image img {
+  width:100%;
+  height: 100%;
+  margin: 0px;
+  object-fit: contain;
+  /*position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;*/
+/*}*/
+
+.stacked {
+  /*float: left;*/
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 0%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    margin-right: 20px;
+}
