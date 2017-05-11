@@ -9,7 +9,6 @@ const Result = (props) => {
         <a href={props.url} target="_blank" className='a-result'>
             <div className='result'>
                 <div className='image' style={style}>
-                    {/*<img src={src} className={imgClass} />*/}
                 </div>
                 <div className='stacked'>
                     <h3>{props.title}</h3>
