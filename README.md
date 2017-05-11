@@ -1,6 +1,3 @@
-# wiki-viewer
-Wikipedia viewer
-
 # Wikipedia viewer
 
 Simple Wikipedia viewer with autocomplete
