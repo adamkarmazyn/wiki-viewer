@@ -62,12 +62,10 @@
     "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "core-js": "^2.0.0",
     "jquery": "^3.2.1",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
-    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.0.0",
     "superagent": "^3.5.2",
     "superagent-jsonp": "^0.1.1"
