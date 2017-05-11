@@ -17,7 +17,7 @@ const Result = (props) => {
                         <div>
                             <p className='truncate'>{props.url}</p>
                         </div>
-                        <span className='truncate'>{props.description}</span>
+                        <div className='description'>{props.description}</div>
                     </div>
                 </div>
             </div>

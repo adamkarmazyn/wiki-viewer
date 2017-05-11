@@ -4,6 +4,11 @@ body {
   background: #222;
 }
 
+.index {
+  width: 850px;
+  margin: auto;
+}
+
 .index img {
   margin: 40px auto;
   border-radius: 4px;
@@ -27,6 +32,9 @@ h1, h2 {
 .search-box-container {
   margin-bottom: 10px;
   text-align: -webkit-center;
+  position: relative;
+  width: 422px;
+  margin: auto;
 }
  
 .search-box-text {
@@ -87,6 +95,40 @@ h3 {
 
 }
 
+.autocomplete__result {
+    position: absolute;
+    width: 350px;
+    left: 35px;
+    background: #707070;
+    box-shadow: 2px 1px 4px 1px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    border-bottom: 0px; 
+    border-top: 0px;
+}
+
+.autocomplete__result ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-height: 203px;
+    overflow: auto;
+}
+
+.autocomplete__result li {
+    padding: 5px;
+    list-style: none;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+.autocomplete__result li.active {
+    background: #909090;
+}
+
+.autocomplete__result li:hover {
+   background: #5d5d5d;
+}
+
 .result h3 {
   font-size: 1rem;
 }
@@ -103,9 +145,19 @@ h3 {
 }
 
 .truncate {
-    /*white-space: nowrap;*/
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.description {
+  height: 2.4em;
+
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .image {
@@ -129,6 +181,8 @@ h3 {
   /*float: left;*/
   position: relative;
   overflow: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
 .image {
