@@ -6,10 +6,9 @@ const Result = (props) => {
         backgroundImage: 'url('+src+')'
     }
     return (
-        <a href={props.url} target="_blank" className='a-result'>
+        <a href={props.url} target="_blank">
             <div className='result'>
-                <div className='image' style={style}>
-                </div>
+                <div className='image' style={style}></div>
                 <div className='stacked'>
                     <h3>{props.title}</h3>
                     <div>

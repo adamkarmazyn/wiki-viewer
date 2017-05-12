@@ -14,26 +14,28 @@ export default class SearchForm extends React.Component {
             highlightedIndex: -1,
             selected: null
         };
-        this.debounceAuto = debounce(this.handleAuto, 1000);
+        this.debounceAuto = debounce(this.handleAuto, 1000); //postpone execution
     }
 
+    //when you type in input
     onChange(event) {
         this.debounceAuto(event.target.value);
         this.props.handleInputChange(event);
     }
 
+    //when you use down, up and enter
     onKeyDown(event) {
         var code = event.keyCode,
             highlightedIndex = this.state.highlightedIndex;
 
         switch (code) {
-            case 13:
+            case 13: //enter
                 this.selectItem(this.state.autocompeteResults[this.state.highlightedIndex]);
                 break
-            case 40:
+            case 40: //down
                 highlightedIndex < this.state.autocompeteResults.length - 1 && (highlightedIndex += 1);
                 break
-            case 38:
+            case 38: //up
                 highlightedIndex > -1 && (highlightedIndex -= 1);
                 break
         }
@@ -42,36 +44,40 @@ export default class SearchForm extends React.Component {
         highlightedIndex > -1 && this.ensureHighlightedVisible();
     }
 
+    //scroll to see highlighted li
     ensureHighlightedVisible() {
         if (!this.refs.list || this.state.highlightedIndex < 0) return;
 
         var _list = $(this.refs.list)
         var _highlighted = _list.children().eq(this.state.highlightedIndex);
-
-        return _list.scrollTop(_list.scrollTop() + _highlighted.position().top - _list.height() / 2 + _highlighted.height() / 2);
+        var _highlightedTop = _highlighted.position() ? _highlighted.position().top : 0;
+        
+        return _list.scrollTop(_list.scrollTop() + _highlightedTop - _list.height() / 2 + _highlighted.height() / 2);
     }
 
+    //scroll to top of ul
     resetListScroll() {
         let list = this.refs.list;
         list.scrollTop = 0;
     }
 
+    //actualise searchTerm in parents state
     selectItem(item) {
         this.refs.searchInput.focus();
         this.resetListScroll();
-        this.setState({ data: [], selected: item});
+        this.setState({ autocompeteResults: [], selected: item, hideList: true, highlightedIndex: -1});
 
         if (item) {
             this.props.handleInputChange(item);
         }
-        this.setState({hideList: true, highlightedIndex: -1});
-        
     }
 
+    //if you pick li using mouse
     handleOnClick(event) {
         this.selectItem(event.target.innerHTML);
     }
 
+    //search in wiki and assign to autocompleteResults
     handleAuto(searchTerm) {
         if (!searchTerm || searchTerm.length < 4 || this.props.stopAutocomp) return
         superagent.get('https://en.wikipedia.org/w/api.php') // Wikipedia API call
@@ -114,7 +120,7 @@ export default class SearchForm extends React.Component {
                         ref='searchInput'
                     />
                 </form>
-                <div className={'autocomplete__result'+hideList}>
+                <div className={'autocomplete-result'+hideList}>
                     <ul ref='list'>{results}</ul>
                 </div>
                 <p className="random-text"><small>or visit a <a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">random article</a>.</small></p>

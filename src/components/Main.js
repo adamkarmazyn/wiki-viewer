@@ -19,9 +19,10 @@ class AppComponent extends React.Component {
     }
   }
 
+  //actualise searchTerm
   handleInputChange(event) {
     var searchTerm;
-    if(typeof event === 'string') {
+    if(typeof event === 'string') { //if you choose item from autocompleteList
       searchTerm = event;
     }
     else if(!!event) {
@@ -29,10 +30,11 @@ class AppComponent extends React.Component {
     }
     this.setState({
       searchTerm: searchTerm,
-      stopAutocomp: false
+      stopAutocomp: false //prevent autocomplete
     });
   }
 
+  //when form is submitted
   handleSubmit(event) {
     event.preventDefault();
     let searchTerm = this.state.searchTerm;
@@ -40,6 +42,7 @@ class AppComponent extends React.Component {
     this.handleSearch(searchTerm);
   }
 
+  //search in wiki with searchTerm
   handleSearch(searchTerm) {
     superagent.get('https://en.wikipedia.org/w/api.php') // Wikipedia API call
       .query({
@@ -65,6 +68,7 @@ class AppComponent extends React.Component {
       });
   }
 
+  //join wiki responses and assign to results
   joinResponses(res1,res2) {
     let searchResults = res1;
     searchResults.push([])
