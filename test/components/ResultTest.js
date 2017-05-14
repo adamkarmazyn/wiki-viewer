@@ -11,8 +11,6 @@ describe('ResultTest', function () {
     };
 
   beforeEach(function () {
-    
-
     this.ResultComponent = createComponent(Result, testingProps);
     this.DivImage = this.ResultComponent.props.children.props.children[0];
     this.DivStacked = this.ResultComponent.props.children.props.children[1];
