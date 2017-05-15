@@ -6,7 +6,7 @@ describe('ResultTest', function () {
       url: 'https://en.wikipedia.org/wiki/REACT',
       title: 'React',
       description: 'From other capitalisation: This is a redirect from a title with another method of capitalisation. It leads to the title in accordance with the Wikipedia naming conventions for capitalisation, or it leads to a title that is associated in some way with the conventional capitalisation of this redirect title.',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ReactOS_logo.svg/250px-ReactOS_logo.svg.pn',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ReactOS_logo.svg/250px-ReactOS_logo.svg.png',
       defaultSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Article_icon_cropped.svg/512px-Article_icon_cropped.svg.png'
     };
 
